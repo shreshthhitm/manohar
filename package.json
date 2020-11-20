@@ -18,6 +18,8 @@
   },
   "homepage": "https://shreshthhitm.github.io/manohar/",
   "dependencies": {
+    "gh-pages": "^2.1.1",
+    "httpster": "^1.0.4"
     "express": "^4.17.1"
   }
 }

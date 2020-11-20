@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cheshtaaagarrwal/Manohar-Bikkaneri-frontend.git"
+    "url": "git+https://github.com/shreshthhitm/manohar.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/cheshtaaagarrwal/Manohar-Bikkaneri-frontend/issues"
+    "url": "https://github.com/shreshthhitm/manohar/issues"
   },
-  "homepage": "https://github.com/cheshtaaagarrwal/Manohar-Bikkaneri-frontend#readme",
+  "homepage": "https://shreshthhitm.github.io/manohar/",
   "dependencies": {
     "express": "^4.17.1"
   }

@@ -1,0 +1,105 @@
+ion-icon {
+   font-size: 25px;
+   color: #5f0e7df0;
+   margin-left: 10px;
+   margin-right: 10px;
+   cursor: pointer;
+}
+.product-container{
+padding-top: 50px;
+}
+.product-header {
+   width: 100%;
+   display: flex;
+
+   margin: 0 auto;
+}
+
+
+.price {
+  
+   
+   margin: auto;
+   align-items: center;
+   padding: 10px 0;
+ 
+}
+
+.quantity {
+  
+   margin: auto;
+   align-items: center;
+   padding: 10px 0;
+ 
+}
+
+.total {
+  margin: auto;
+ 
+  padding: 10px 0;
+  align-items: center;
+}
+
+.product {
+ 
+   display: flex;
+   margin: auto;
+   align-items: center;
+   padding: 10px 0;
+ 
+}
+
+.product ion-icon {
+   cursor: pointer;
+   
+}
+
+.products {
+   width: 100%;
+   display: flex;
+   flex-wrap: wrap;
+   margin: auto;
+}
+
+.products img {
+   width: 75px;
+}
+
+.basketTotalContainer {
+   display: flex;
+   justify-content: flex-end;
+   width: 100%;
+  
+}
+
+.basketTotalTitle {
+   padding-top: 30px;
+   width: 30%;
+}
+
+.basketTotal {
+   padding-top: 30px;
+   width: 10%;
+}
+
+@media(max-width: 500px) {
+
+
+   .sm-hide {
+       display: none;;
+   }
+
+   .products,
+   .product-header {
+       justify-content: center;
+   }
+.quantity{
+   border-bottom: 1px solid black;
+   padding-bottom: 10px;
+}
+   .basketTotalContainer {
+       padding-right: 8%;
+   }
+}
+
+

@@ -1,0 +1,162 @@
+.black{
+    color:gold !important;
+    font-size: 20px;
+  }
+  .navbar-toggler{
+    border: none;
+    background-color: #FFFFFF;
+  }
+  .navbar{
+  background-color: #5f0e7df0;
+  }
+  
+  .logo{
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  
+    body{
+        padding-top: 150px;
+        font-family: 'Dancing Script', cursive;
+  background-color: #c0dff9;
+    }
+  
+    #about{
+      margin-top: 100px;
+  }
+  
+  .section-title {
+    text-align: center;
+    padding-bottom: 30px;
+  }
+  
+  .section-title h2 {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    color: #222222;
+    text-align: center;
+  }
+  
+  .section-title h2::before, .section-title h2::after {
+    content: '';
+    width: 50px;
+    height: 2px;
+    background: #6c23a1;
+    display: inline-block;
+  }
+  
+  .section-title h2::before {
+    margin: 0 15px 10px 0;
+  }
+  
+  .section-title h2::after {
+    margin: 0 0 10px 15px;
+  }
+  
+  .section-title p {
+    margin: 15px 0 0 0;
+  }
+  
+  
+  
+  .top
+  {
+      margin-top:60px;
+  }
+  
+  footer{
+    padding-top: 10px;
+    background-color: #1C2331;
+  }
+  
+  
+  ul{
+  list-style-type: none;
+  
+  }
+  .footer-links{
+    padding: 0;
+  }
+  .footer-title{
+    color: white;
+    font-size: large;
+    text-transform: uppercase;
+  }
+  .footer-line{
+  
+  width: 60px;
+  margin-left: 0;
+  font-weight: 20px;
+  background-color: #EA80FC;
+  }
+  .fa{
+  color: white;
+  }
+  .copy{
+  justify-content: center;
+  }
+  #copyright{
+  color: white;
+  text-align: center;
+  
+  }
+  .footer-links>li{
+  color: white;
+  }
+  .footer-links >li>a{
+  color: white;
+  }
+  
+  body{
+    background-color: #25274d;
+}
+/* .contact{
+
+    height: 400px;
+} */
+.orange{
+    background: #ff9b00;
+    padding: 4%;
+  
+}
+.contact-info{
+    margin-top:10%;
+}
+.contact-info img{
+    margin-bottom: 15%;
+}
+.contact-info h2{
+    margin-bottom: 10%;
+}
+.white{
+    background: #fff;
+ padding: 4%;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+.contact-form label{
+    font-weight:600;
+}
+.contact-form button{
+    background: #25274d;
+    color: #fff;
+    font-weight: 600;
+    width: 25%;
+}
+.contact-form button:focus{
+    box-shadow:none;
+}  
+.alert{
+  background-color: #79c879;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: none;
+}
+iframe{
+  justify-content: center;
+  align-items: center;
+}

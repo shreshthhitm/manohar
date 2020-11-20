@@ -1,0 +1,50 @@
+footer{
+    margin-top: 50px;
+    background-color: #1C2331;
+}
+
+a,li,.footer-title{
+    color: #CFD8DC;
+}
+ul{
+list-style-type: none;
+  
+}
+.footer-links{
+    padding: 0;
+}
+.footer-title{
+    color: white;
+    font-size: large;
+    text-transform: uppercase;
+}
+.footer-line{
+	background-color: #6351ce;
+	width: 30%;
+	margin-left: 0;
+	font-weight: 20px;
+	height: 2px;
+}
+.fa{
+	color: white;
+}
+.copy{
+	justify-content: center;
+}
+#copyright{
+	color: white;
+
+}
+.test{
+width: 8px;
+	background: black;
+	position: relative;
+	left: 50px;
+	animation: heightStretch 4s ease-out;
+	animation-fill-mode: forwards;
+}
+
+@keyframes heightStretch {
+	from {height:0;}
+	to {height:100%;}
+}

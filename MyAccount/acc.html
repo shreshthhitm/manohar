@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title></title>
+  <link href="./index.css" rel="stylesheet">
+    <link href="css/about.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+       <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-auth.js"></script>
+       <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-database.js"></script>
+       <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-storage.js"></script>
+  <style>
+body {
+  font-family: 'Varela Round', sans-serif;
+}
+.modal-login {    
+  color: #636363;
+  width: 350px;
+}
+.modal-login .modal-content {
+  padding: 20px;
+  border-radius: 5px;
+  border: none;
+}
+.modal-login .modal-header {
+  border-bottom: none;   
+  position: relative;
+  justify-content: center;
+}
+.modal-login h4 {
+  text-align: center;
+  font-size: 26px;
+  margin: 30px 0 -15px;
+}
+.modal-login .form-control:focus {
+  border-color: #70c5c0;
+}
+.modal-login .form-control, .modal-login .btn {
+  min-height: 40px;
+  border-radius: 3px; 
+}
+.modal-login .close {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+} 
+.modal-login .modal-footer {
+  background: #ecf0f1;
+  border-color: #dee4e7;
+  text-align: center;
+  justify-content: center;
+  margin: 0 -20px -20px;
+  border-radius: 5px;
+  font-size: 13px;
+}
+.modal-login .modal-footer a {
+  color: #999;
+}   
+.modal-login .avatar {
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: -70px;
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  z-index: 9;
+  background: #60c7c1;
+  padding: 15px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+.modal-login .avatar img {
+  width: 100%;
+}
+.modal-login.modal-dialog {
+  margin-top: 80px;
+}
+.modal-login .btn, .modal-login .btn:active {
+  color: #fff;
+  border-radius: 4px;
+  background: #60c7c1 !important;
+  text-decoration: none;
+  transition: all 0.4s;
+  line-height: normal;
+  border: none;
+}
+.modal-login .btn:hover, .modal-login .btn:focus {
+  background: #45aba6 !important;
+  outline: none;
+}
+.trigger-btn {
+  display: inline-block;
+  margin: 100px auto;
+}
+</style>
+</head>
+<body>
+   <nav class="navigation navbar fixed-top navbar-expand-lg navbar-light   justify-content-between">
+      
+        <img  data-toggle="collapse" class="logo" src="./images/img/Picture1.png" width="240" height="110" alt="logo">
+        <button class="navbar-toggler" style="border: none;" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+         
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="nav navbar-nav justify-content-end ml-auto ">
+                <li class="nav-item ">
+                    <a class="nav-link black nav-link-fade-up" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link black nav-link-fade-up" href="/about">About us</a>
+                </li>
+                <li class="nav-item blog">
+                    <a class="nav-link black nav-link-fade-up" href="/range">Our Range</a>
+                </li>
+         
+               <li class="nav-item black ">
+                        <a class="nav-link black nav-link-fade-up" href="/stores">Stores</a>
+                </li>
+                    <li class="nav-item black ">
+                        <a class="nav-link black nav-link-fade-up" href="/contact">Contact us</a>
+                    </li>
+                    <!-- <li class="nav-item black ">
+                        <a class="nav-link black nav-link-fade-up" href="#">Order Online</a>
+                    </li> -->
+
+                   
+              <li class="nav-item dropdown black nav-link-fade-up">
+        <a class="nav-link dropdown-toggle black" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-user fa-fw" style="color: gold;"></i>User
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">My Account</a>
+          <a class="dropdown-item" href="#">My Orders</a>
+          
+          
+        </div>
+      </li> 
+
+      <!-- <li class="nav-item black">
+                  <a href="#myModal" class="trigger-btn nav-link black" data-toggle="modal" id="log">Login/signup</a>
+              </li> -->
+              
+            </ul>
+    
+                
+        </div>
+    </nav>
+    <div>
+
+	<div class="container col-md-8">
+	<div class="card ">
+  <div class="card-header">ACCOUNT DETAILS</div>
+  <div class="card-body">
+  	<label for="firstName" class="font-weight-bold">Name:</label> 
+  	<p style="display: inline;" id="userName"></p>
+  	<br>
+  	<label for="lastName" class="font-weight-bold">Contact number:</label>
+  	<p style="display: inline-block;" id="userContact"></p>
+  	<br>
+  	<label for="email" class="font-weight-bold">Email:</label>
+  	<p style="display: inline-block;" id="userEmail"></p>
+  	<br>
+  	<label for="address" class="font-weight-bold">Address:</label>
+  	<p style="display: inline-block;" id="userAddress"></p>
+  	<br>
+  	<label for="country" class="font-weight-bold">State:</label>
+  	<p style="display: inline-block;" id="userState"></p>
+  	<br>
+    <label for="country" class="font-weight-bold">City:</label>
+  	<p style="display: inline-block;" id="userCity"></p>
+  	<br>
+  	<label for="zip" class="font-weight-bold">Zip:</label>
+  	<p style="display: inline-block;" id="userZip"></p>
+  	<br>
+  </div>
+
+  <div class="card-footer"><button class="btn-primary" href="#signup" data-toggle="modal">Edit Details</button></div>
+</div>
+	</div>
+
+
+  <div id="signup" class="modal fade">
+  <div class="modal-dialog modal-login">
+    <div class="modal-content">
+      <div class="modal-header"> 
+        <br>      
+        <h1 class="h4 text-gray-900 mb-4">Edit Your Details</h1>
+      </div>
+      <form class="user">
+        <div class="form-group">
+          <input type="text" class="form-control form-control-user" id="name1" aria-describedby="emailHelp" placeholder="Enter name...">
+        </div>
+        <div class="form-group">
+          <input type="tel" class="form-control form-control-user" id="number1" aria-describedby="emailHelp" placeholder="Enter contact number...">
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-control form-control-user" id="email1" aria-describedby="emailHelp" placeholder="Enter Email Address...">
+        </div>
+        <div class="form-group">
+         <!--  <input type="password" class="form-control form-control-user" id="exampleInputPassword1" placeholder="address"> -->
+         <input type="text" class="form-control" id="address1" placeholder="Enter Address" required>
+        </div>
+        <div class="form-group">
+          <!-- <input type="password" class="form-control form-control-user" placeholder="Repeat Password" id="repeat-pass"> -->
+         <input type="text" class="form-control" id="state1" placeholder="Enter State" required>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" id="city1" placeholder="Enter City" required>
+         
+        </div>
+         <div class="form-group">
+          <input type="text" class="form-control" id="zip1" placeholder="Enter Zip Code" required>
+         
+        </div>
+        
+        <a id="editChanges" data-dismiss="#myModal"  data-toggle="modal" data-target="#modalRegisterForm" class="btn btn-primary btn-user btn-block" >
+          Save
+        </a>
+    </div>
+  </div>
+</div>
+<footer class=" animated slideInLeft" style="animation-delay:1s" >
+    <!-- container start -->
+    <div class="container">
+        <div class="row">
+            <div class="col-6 col-md-3">
+                    <h3 class="footer-title">Get To know Us</h3>
+                    <hr class="footer-line" >
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li>Our Branches
+                            <ul>
+                                <li>
+                                    branch 1
+                                </li>
+                                <li>
+                                    branch 2
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+            </div>  
+            <div class="col-6 col-md-3">
+                
+                    <h3 class="footer-title">Follow us</h3>
+                    <hr class="footer-line">
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fa fa-facebook"></i>  Facebook</a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i>  Instagram</a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i>  Twitter</a></li>
+                    </ul>
+                
+            </div>
+            <div class="col-6 col-md-3">
+                    <h3 class="footer-title">Mail Us</h3>
+                    <hr class="footer-line">
+                    <ul class="footer-links">
+                        <li><i class="fa fa-map-marker"></i>  New Delhi</li>
+                        <li><i class="fa fa-phone"></i>  +91 9876543210</li>
+                        
+                        <li><a href="#"><i class="fa fa-envelope-o"></i>  manohar.com</a></li>
+                        
+                    </ul> 
+            </div>
+            <div class="col-6 col-md-3">
+                    <h3 class="footer-title">Service</h3>
+                    <hr class="footer-line">
+                    <ul class="footer-links">
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">Order History</a></li>
+                        <li><a href="#">Wishlist</a></li>
+                        <li><a href="#">Track My Order</a></li>
+                        <li><a href="help.html">Help</a></li>
+                        <li><a href="FAQ.html">FAQ</a></li>
+                    </ul>
+            </div>  
+        </div>  
+        <div class="row copy align-self-center">
+            <p id="copyright">Manohar Bikaneri © 2020| Powered By Manohar Bikaneri<p>
+        </div>
+    </div>
+    <!-- container end -->
+</footer>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="/myAccount.js"></script>
+
+</body>
+</html>
